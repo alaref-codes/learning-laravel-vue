@@ -5,7 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -14,9 +14,20 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/test', function () {
+Route::get('/', function () {
     return Inertia::render('Test', [
-        'time' => now()->toTimeString()
+        'time' => now()->toTimeString(),
+        'name' => 'Alaref Abushaala'
+    ]);
+});
+
+Route::get('/users', function () {
+    sleep(1);
+    return Inertia::render('Users');
+});
+
+Route::get('/settings', function () {
+    return Inertia::render('Settings', [
     ]);
 });
 

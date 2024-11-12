@@ -1,12 +1,14 @@
-<template>
-    <v-card
+<template> 
+    <Layout>
+        <div :class="['text-h3']">Home</div>
+    <!-- <v-card
       class="mx-auto my-8"
       elevation="16"
       max-width="344"
     >
       <v-card-item>
         <v-card-title>
-          Alaref Abushaala
+          {{ name }}
         </v-card-title>
   
         <v-card-subtitle>
@@ -18,14 +20,14 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </v-card-text>
     </v-card>
-    
+     -->
 
     <v-card
     class="mx-auto"
     max-width="500"
   >
     <v-card-title class="text-h6 font-weight-regular justify-space-between">
-      <span>niceone</span>
+      <span>Registration</span>
       <v-avatar
         color="primary"
         size="24"
@@ -100,22 +102,32 @@
     </v-card-actions>
   </v-card>
   
+    </Layout>
+    
   </template>
 
 <script>
-export default {
-  data: () => ({
-    step: 1,
-  }),
+import Layout from '@/Shared/Layout.vue';
 
-  computed: {
-    currentTitle () {
-      switch (this.step) {
-        case 1: return 'Sign-up'
-        case 2: return 'Create a password'
-        default: return 'Account created'
-      }
+export default {
+    data: () => ({
+        step: 1,
+    }),
+
+    components: {Layout},
+
+    props: {
+        name: String
     },
-  },
+
+    computed: {
+        currentTitle () {
+        switch (this.step) {
+            case 1: return 'Sign-up'
+            case 2: return 'Create a password'
+            default: return 'Account created'
+        }
+        },
+    },
 }
 </script>

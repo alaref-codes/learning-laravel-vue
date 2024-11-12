@@ -22,6 +22,7 @@ import { VCard,
         VBtn,
         VSpacer,
         VCardActions, 
+        VSheet,
     } from 'vuetify/components';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -30,7 +31,7 @@ export const vuetify = createVuetify({
       defaultTheme: 'light',
       //
     },
-    components: {
+    components: { // This is called global component registration
         VCard,
         VCardTitle,
         VCardSubtitle,
@@ -45,6 +46,7 @@ export const vuetify = createVuetify({
         VBtn,
         VSpacer,
         VCardActions,
+        VSheet,
     }
   });
 
